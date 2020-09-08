@@ -1,16 +1,15 @@
 <template>
     <v-app>
-        <!-- <v-system-bar height="10"></v-system-bar> -->
-        <v-app-bar color="blue" max-height="30" height="30" dense flat>Tetseteste</v-app-bar>
+        <v-toolbar dark src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
+            <v-spacer />
+            <v-toolbar-title>LISTA FÁCIL</v-toolbar-title>
+            <v-spacer />
+        </v-toolbar>
 
         <v-container class="grey lighten-5">
             <v-row>
-                <!-- <v-row justify="space-between"> -->
                 <v-col cols="12" sm="8">
-                    <!-- <v-card class="pa-2" outlined> -->
-                    <!-- <v-card width="auto" class="mx-auto mt-5"> -->
-                    <!-- <v-card class="d-inline-block mx-auto"> -->
-                    <!-- <v-container> -->
+                    <v-text-field label="Digite o nome do produto que deseja procurar" />
                     <v-card class="mx-auto mb-2" outlined v-for="item in 5" :key="item">
                         <v-list-item four-line>
                             <v-list-item-avatar tile size="80" color="grey">
@@ -21,7 +20,6 @@
                                 ></v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <!-- <v-text-field label="Valor" prepend-icon="mdi-currency-usd" /> -->
                                 <div class="my-4 subtitle-1" align="center">R$ 10,99 (100g)</div>
                             </v-list-item-content>
                             <v-list-item-content>
@@ -30,124 +28,49 @@
                             <v-list-item-content class="ml-5">
                                 <div class="my-4 subtitle-1" align="center">R$ 109,90</div>
                             </v-list-item-content>
-
                             <div class="ml-5" align="center">
                                 <v-card-actions>
-                                    <!-- <v-btn
-        outlined
-        rounded
-        text
-      >
-        Button
-                                    </v-btn>-->
                                     <v-btn color="primary" fab small dark>
                                         <v-icon>mdi-plus</v-icon>
                                     </v-btn>
                                 </v-card-actions>
-
-                                <!-- <v-btn color="primary" fab small dark>
-                                    <v-icon>mdi-plus</v-icon>
-                                </v-btn>-->
                             </div>
                         </v-list-item>
-                        <v-list-item-subtitle class="pl-4">Castanha de Caju Salgada Inteira W1 500g</v-list-item-subtitle>
+                        <v-list-item-subtitle class="px-2 pb-2">Castanha de Caju Salgada Inteira W1 500g</v-list-item-subtitle>
                     </v-card>
-
-                    <!-- </v-container> -->
-                    <!-- </v-card> -->
-                    <!-- </v-card> -->
-                    <!-- </v-card> -->
                 </v-col>
 
                 <v-col cols="12" sm="4">
-
-  <v-card
-    class="mx-auto"
-    max-width="500"
-  >
-    <v-list shaped>
-      <v-list-item-group
-        v-model="model"
-        multiple
-      >
-        <template v-for="(item, i) in items">
-          <v-divider
-            v-if="!item"
-            :key="`divider-${i}`"
-          ></v-divider>
-
-          <v-list-item
-            v-else
-            :key="`item-${i}`"
-            :value="item"
-            active-class="deep-purple--text text--accent-4"
-          >
-            <template v-slot:default="{ active }">
-              <v-list-item-content>
-                <v-list-item-title v-text="item"></v-list-item-title>
-              </v-list-item-content>
-
-              <v-list-item-action>
-                <v-checkbox
-                  :input-value="active"
-                  color="deep-purple accent-4"
-                ></v-checkbox>
-              </v-list-item-action>
-            </template>
-          </v-list-item>
-        </template>
-      </v-list-item-group>
-    </v-list>
-  </v-card>
-
-                    <!-- <v-card class="pa-2" outlined>
-                        <v-card width="40em" class="mx-auto mt-5">
-
-                            
-                            <v-card-title>
-                                <h1 class="display1">Login</h1>
-                            </v-card-title>
-
-                            <v-card-text>
-                                <v-form>
-                                    <v-text-field
-                                        label="username"
-                                        prepend-icon="mdi-account-circle"
-                                    />
-                                    <v-text-field
-                                        :type="showPassword ? 'text' : 'password'"
-                                        label="password"
-                                        prepend-icon="mdi-lock"
-                                        :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                                        @click:append="showPassword = !showPassword"
-                                    />
-                                </v-form>
-                            </v-card-text>
-                            <v-divider></v-divider>
-                            <v-card-actions>
-                                <v-btn color="success">Register</v-btn>
-                                <v-spacer></v-spacer>
-                                <v-btn color="info">Login</v-btn>
-                            </v-card-actions>
-                        </v-card>
-                    </v-card> -->
-
+                    <h3 class="black--text">LISTA FÁCIL</h3>
+                    <v-card class="mx-auto mb-2" outlined v-for="item in 5" :key="item">
+                        <v-list-item four-line>
+                            <v-list-item-avatar tile size="40" color="grey">
+                                <v-img
+                                    height="4em"
+                                    width="4em"
+                                    src="./../public/img/castanha-caju.webp"
+                                ></v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <div class="d-flex justify-space-between caption">
+                                    <div class="v-sheet theme--light">R$ 10,99 (100g)</div>
+                                    <div class="v-sheet theme--light">100g</div>
+                                    <div class="v-sheet theme--light">R$ 109,90</div>
+                                </div>
+                                <div class="d-flex justify-space-between caption">
+                                    <div
+                                        class="v-sheet theme--light text-truncate"
+                                    >Castanha de Caju Salgada Inteira W1 500g</div>
+                                </div>
+                            </v-list-item-content>
+                            <v-list-item-avatar size="20">
+                                <v-btn fab color="red">
+                                    <v-icon color="white" size="20">mdi-minus</v-icon>
+                                </v-btn>
+                            </v-list-item-avatar>
+                        </v-list-item>
+                    </v-card>
                 </v-col>
-
-                <!-- <v-col
-        v-for="n in 2"
-        :key="n"
-        cols="12"
-        sm="6"
-      >
-        <v-card
-          class="pa-2"
-          outlined
-          tile
-        >
-          One of three columns
-        </v-card>
-                </v-col>-->
             </v-row>
         </v-container>
 
@@ -202,20 +125,6 @@ export default {
         // HelloWorld
     },
 
-    data: () => ({
-        items: [
-        'Dog Photos',
-        'Cat Photos',
-        '',
-        'Potatoes',
-        'Carrots',
-      ],
-      model: ['Carrots'],
-        showPassword: false
-    })
+    data: () => ({})
 };
-
-
-
-
 </script>
